@@ -28,6 +28,7 @@ header {
 	position: sticky; 
 	top: 0;
 
+	z-index: 1;
 	&.fixed-header {
 		background-color: #fff; 
 		transition: .5s;
@@ -98,13 +99,27 @@ header {
 	background-size: cover; 
 	min-height: 100vh;
 	background-position: center;
+	position: relative;
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		background-color: rgba(0,0,0,.3);
+		z-index: 0;
+	}
+	> div {
+		z-index: 1;
+		position: relative;
+	}
 }
 
 
 // Formulario 
 
 .section-form {
-	background-color: rgba(0,0,0,.3);
 	padding: 40px 0;
 	margin-bottom: 50px;
 }
@@ -204,6 +219,8 @@ footer {
 	font-size: 15px;
 	color: #b1b1b1;
 
+	z-index: 1;
+	position: relative;
 	span {
 		color: #ff8000;
 		font-weight: 600;
