@@ -16,6 +16,11 @@ body {
 		&:hover {
 			text-decoration: none;
 		}
+
+		@include media-breakpoint-down(xs) { 
+			font-size: 1.6rem; 
+			margin-top: 4px; 
+		}
 	}
 }
 
@@ -27,16 +32,28 @@ header {
 	border-bottom: 1px solid #b1cbec;
 	position: sticky; 
 	top: 0;
-
 	z-index: 10;
+	.logo-orange {
+		display: none;
+	}
 	&.fixed-header {
 		background-color: #fff; 
-		transition: .5s;
+		transition: .2s;
+
+		.logo-orange {
+			display: block;
+		}
+
+		.logo-white {
+			display: none;
+		}
 
 		.link {
 			color: #ff8000;
 		}
 	}
+
+	
 
 }
 
@@ -48,6 +65,11 @@ header {
 	color: #fff; 
 	text-align: center; 
 	margin-bottom: 30px; 
+	@include media-breakpoint-down(xs) { 
+		font-size: 3rem; 
+		line-height: 3.8rem; 
+		margin-bottom: 20px;
+	}
 }
 
 .h2 {
@@ -56,7 +78,10 @@ header {
 	font-size: 1.6rem; 
 	font-weight: 600; 
 	margin-bottom: 40px; 
-	letter-spacing: 1px 
+	letter-spacing: 1px;
+	@include media-breakpoint-down(xs) { 
+		line-height: 2rem; 
+	}
 }
 
 .h3 {
@@ -72,11 +97,19 @@ header {
 	margin: 0 auto; 
 	text-align: center;
 	margin-bottom: 70px;
+	@include media-breakpoint-down(xs) { 
+		margin-bottom: 30px; 
+	}
 	li {
 		display: inline; 
 		color: #fff; 
 		font-size: 15px; 
 		margin-right: 15px; 
+		@include media-breakpoint-down(xs) { 
+			display: block; 
+			margin-bottom: 5px; 
+			margin-right: 0; 
+		}
 
 		&:last-child {
 			margin-right: 0;
@@ -89,6 +122,11 @@ header {
 	float: right; 
 }
 
+.text-left-xs {
+	@include media-breakpoint-down(xs) {
+		text-align: left!important;
+	}
+}
 
 // Contenido landing
 
@@ -122,6 +160,9 @@ header {
 .section-form {
 	padding: 40px 0;
 	margin-bottom: 50px;
+	@include media-breakpoint-down(xs) { 
+		margin-bottom: 20px; 
+	}
 }
 
 legend {
@@ -155,6 +196,9 @@ legend {
 .form-check {
 	float: left; 
 	margin-top: 10px; 
+	@include media-breakpoint-down(xs) { 
+		margin-bottom: 20px; 
+	}
 	label {
 		color: #fff; 
 		font-size: 1.2rem; 
@@ -180,6 +224,11 @@ legend {
 	padding: 12px 64px; 
 	font-size: 12px; 
 	letter-spacing: 1px; 
+	@include media-breakpoint-down(xs) { 
+		display: block;
+		width: 100%;
+	}
+
 }
 
 .btn-submit {
@@ -197,6 +246,10 @@ legend {
 	width: 288px;
 	margin-bottom: 50px;
 	border: 1px solid #cbcbcb; 
+	@include media-breakpoint-down(xs) { 
+		margin-bottom: 30px; 
+		width: 100%;
+	}
 
 	p {
 		font-size: 1.4rem; 
