@@ -25,7 +25,18 @@ body {
 header {
 	padding: 25px 0 20px 0;
 	border-bottom: 1px solid #b1cbec;
-	margin-bottom: 40px; 
+	position: sticky; 
+	top: 0;
+
+	&.fixed-header {
+		background-color: #fff; 
+		transition: .5s;
+
+		.link {
+			color: #ff8000;
+		}
+	}
+
 }
 
 // Estilos de los titulares
@@ -93,7 +104,7 @@ header {
 // Formulario 
 
 .section-form {
-	background-color: rgba(0,0,0,.4);
+	background-color: rgba(0,0,0,.3);
 	padding: 40px 0;
 	margin-bottom: 50px;
 }
@@ -202,6 +213,11 @@ footer {
 		font-size: 1.2rem; 
 		color: #fff; 
 		text-decoration: underline; 
+		transition: .3s;
+
+		&:hover {
+			color: #b1b1b1; 
+		}
 	}
 }
 

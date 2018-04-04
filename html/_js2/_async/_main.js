@@ -1,5 +1,5 @@
 /*	----------------------------------------------------------------------------------------------------
-	 JS global para todo el proyecto de carga asíncrona
+	 JS ADN global para todo el proyecto de carga asíncrona
 ------------------------------------------------------------------------------------------------------ */
 
 /*	--------------------------------------------------
@@ -25,111 +25,66 @@ function initAsync(){
 $(window).load(function(){
 
 
-	// Añado Sticky 
 
-	$(window).scroll(function(){
-	    if ($(window).scrollTop() >= 10) {
-	       $('header').addClass('fixed-header');
-	    }
-	    else {
-	       $('header').removeClass('fixed-header');
-	    }
-	});
-
-
-	// Inicialize tooltips
-	$('[data-toggle="tooltip"]').tooltip();
-
-	
-	if ($('#interior-porra-form').length > 0 ) {
-
-		$('#interior-porra-form').validate({
-			invalidHandler: function(event, validator) {
-
-				var bases = false;
-
-				 for(erI in validator.errorList) {
-
-				 	if ( $(validator.errorList[erI].element).is('select.selectpicker') ) {
-				 		$(validator.errorList[erI].element).closest('.bootstrap-select').find('.btn').addClass('error');
-				 	}
-				 	if ( validator.errorList.length == 1 && $(validator.errorList[erI].element).is('#terms') ) {
-				 		$('.cnt-error.bases').show();
-				 		$('.cnt-error.require').hide();
-				 		bases = true;
-				 	} else {
-				 		$('.cnt-error.bases').hide();
-				 		bases = false;
-				 	}
-				 }
-
-				 if ( validator.errorList.length > 0 && bases == false ) {
-				 	$('.cnt-error.require').show();
-				 	$('.cnt-error.bases').hide();
-				 }
-			}
-		});
-	}
-	  
 	//Ejecutamos Masonry
-	// $('.js-masonry').masonry({
-	//   columnWidth: 1,
-	// });	
+	$('.js-masonry').masonry({
+	  columnWidth: 1,
+	});	
 	
 	
 	//Ejecutamos Sliders	
-	// $('.js-slick').slick({
-	// 	dots: true,
-	// 	arrows: false
-	// });
+	$('.js-slick').slick({
+		dots: true,
+		arrows: false
+	});
 	
 	
 	//Ejecutamos Sliders con autoPlay
-	// $('.js-slick-autoplay').each(function(){
-	// 	$(this).slick({
-	// 		dots: true,
-	// 		arrows: false,
-	// 		autoplay: true,
-	// 		autoplaySpeed: $(this).attr('data-play-speed') || 10000 //10s de autoplay o por data-play-speed
-	// 	});
-	// });
+	$('.js-slick-autoplay').each(function(){
+		$(this).slick({
+			dots: true,
+			arrows: false,
+			autoplay: true,
+			autoplaySpeed: $(this).attr('data-play-speed') || 10000 //10s de autoplay o por data-play-speed
+		});
+	});
 	
 	
 	//Slider sin dots con arrows
-	// $('.js-slick-arrows').slick({
-	// 	autoplay: true,
-	// 	autoplaySpeed: 6000,
-	// 	speed: 800,
-	// 	cssEase: 'linear',
-	// 	dots: false,
-	// 	arrows: true,
-	// 	prevArrow: '<button type="button" class="slick-prev"><svg viewBox="0 0 64 64" width="64" class="icon icon--md" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../html/svg/symbol/svg/sprite.symbol.svg#arrow_left"></use></svg></button>',
-	// 	nextArrow: '<button type="button" class="slick-next"><svg viewBox="0 0 64 64" width="64" class="icon icon--md" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../html/svg/symbol/svg/sprite.symbol.svg#arrow_rigth"></use></svg></button>',
+	$('.js-slick-arrows').slick({
+		autoplay: true,
+		autoplaySpeed: 6000,
+		speed: 800,
+		cssEase: 'linear',
+		dots: false,
+		arrows: true,
+		prevArrow: '<button type="button" class="slick-prev"><svg viewBox="0 0 64 64" width="64" class="icon icon--md" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../html/svg/symbol/svg/sprite.symbol.svg#arrow_left"></use></svg></button>',
+		nextArrow: '<button type="button" class="slick-next"><svg viewBox="0 0 64 64" width="64" class="icon icon--md" role="presentation"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="../html/svg/symbol/svg/sprite.symbol.svg#arrow_rigth"></use></svg></button>',
 		
-	// 	responsive: [
-	// 	    {
-	// 	      breakpoint: 768,
-	// 	      settings: {
-	// 	        speed: 400,
-	// 	      }
-	// 	    }
-	// 	    // You can unslick at a given breakpoint now by adding:
-	// 	    // settings: "unslick"
-	// 	    // instead of a settings object
-	// 	  ]		
+		responsive: [
+		    {
+		      breakpoint: 768,
+		      settings: {
+		        speed: 400,
+		      }
+		    }
+		    // You can unslick at a given breakpoint now by adding:
+		    // settings: "unslick"
+		    // instead of a settings object
+		  ]		
 		
-	// });
+	});
 	
-	// $('.js-toggle-text').each(function(){
-	// 	$(this).on('click', function(){
-	// 		console.log('a');
-	// 		var _newText = $(this).attr('data-text');
-	// 		$(this).attr('data-text', _newText);
-	// 		$(this).text(_newText);
-	// 	});	
-	// });	
+	$('.js-toggle-text').each(function(){
+		$(this).on('click', function(){
+			console.log('a');
+			var _newText = $(this).attr('data-text');
+			$(this).attr('data-text', _newText);
+			$(this).text(_newText);
+		});	
+	});	
 	
-});
+})	
 
 
 svg4everybody();
@@ -139,7 +94,7 @@ svg4everybody();
 	Lógica de scripts
 -------------------------------------------------- */
 $(function() {
-	  
+	
 	
 	/*	--------------------------------------------------
 		Recalculamos alturas cuando se ejecute el lazysizes
@@ -289,6 +244,49 @@ $(function() {
 	
 
 
+	/*	--------------------------------------------------
+		Muestro modal de prueba kpmg impulsa
+		tras 5 segundos
+	-------------------------------------------------- */
+
+	if ($('#modal-test-impulsa').length>0 ) {
+		setTimeout(function(){ 
+			$('#modal-test-impulsa').modal(); 
+		}, 3000);
+
+	}
+
+	/*	--------------------------------------------------
+		Muestro modal de suscripción
+		por defecto
+	-------------------------------------------------- */
+
+
+	if ($('#modal-suscription').length>0 ) {
+
+		$('#modal-suscription').on('show.modal', function(){
+		});
+		$('#modal-suscription').on('hide.modal', function(){
+			
+		});
+
+		$('#modal-suscription').modal('show'); 
+		$('#modal-suscription').on('shown.modal', function(){
+			
+		});
+
+	}
+
+	/*	--------------------------------------------------
+		Muestro modal de preparando documentos
+		por defecto
+	-------------------------------------------------- */
+
+	if ($('#modal-docs').length>0 ) {
+
+		$('#modal-docs').modal();
+
+	}
 
 	/*	--------------------------------------------------
 		Calculo altura del menu mobile
@@ -297,7 +295,7 @@ $(function() {
 	maxHeight = $(window).height() - $('.off-canvas__head').outerHeight() - $('.bottom-off-canvas').outerHeight() - 20; 
 
 	$('.js-height-menu').css('height', maxHeight); 
-	// console.log($('.bottom-off-canvas').outerHeight()); 
+	console.log($('.bottom-off-canvas').outerHeight()); 
 	
 
 	
