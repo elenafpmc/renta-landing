@@ -1,0 +1,105 @@
+@@include("core/html-start.html")
+
+	
+
+	<main class="wrapper content-renta" role="main">
+    @@include("blocks/header.html")
+    <div class="container">
+      <h1 class="h1">COMPRAMOS EDIFICIOS PARA REHABILITAR</h1>
+      <ul class="list-inline">
+        <li><svg  viewBox="0 0 23 23" width="30"  class="icon" role="presentation"><use xlink:href="svg/symbol/svg/sprite.symbol.svg#tick"></use></svg> No importa el estado del edificio</li>
+        <li><svg  viewBox="0 0 23 23" width="30"  class="icon" role="presentation"><use xlink:href="svg/symbol/svg/sprite.symbol.svg#tick"></use></svg> Con o sin inquilinos</li>
+        <li><svg  viewBox="0 0 23 23" width="30"  class="icon" role="presentation"><use xlink:href="svg/symbol/svg/sprite.symbol.svg#tick"></use></svg> Madrid y Barcelona ciudad</li>
+        <li><svg  viewBox="0 0 23 23" width="30"  class="icon" role="presentation"><use xlink:href="svg/symbol/svg/sprite.symbol.svg#tick"></use></svg> Escritura y pago en 60 días</li>
+      </ul>
+    </div>
+
+
+    <!-- Block Form -->
+    <div class="section-form">
+      <div class="container">
+        <h2 class="h2">Escríbenos y contestaremos a todas las ofertas en menos de 24 horas.</h2>
+        <form>
+          <div class="row">
+            <div class="col-sm-6">
+              <fieldset>
+                <legend>Datos personales</legend>
+                <div class="form-group">
+                  <label class="sr-only" for="info-name">Nombre, apellidos</label>
+                  <input type="text" class="form-control" id="info-name" aria-describedby="emailHelp" placeholder="Nombre, apellidos">
+                </div>
+                <div class="form-group">
+                  <label class="sr-only" for="info-phone">Teléfono</label>
+                  <input type="text" class="form-control" id="info-phone" aria-describedby="emailHelp" placeholder="Teléfono">
+                </div>
+                <div class="form-group">
+                  <label class="sr-only" for="info-mail">Email</label>
+                  <input type="email" class="form-control" id="info-mail" aria-describedby="emailHelp" placeholder="Email">
+                </div>
+              </fieldset>
+            </div>
+            <div class="col-sm-6">
+              <fieldset>
+                <legend>Datos del inmueble</legend>
+                <div class="form-group">
+                  <label class="sr-only" for="info-adress">Dirección</label>
+                  <input type="text" class="form-control" id="info-adress" aria-describedby="emailHelp" placeholder="Dirección">
+                </div>
+                <div class="form-group">
+                  <label class="sr-only" for="info-city">Ciudad</label>
+                  <input type="text" class="form-control" id="info-city" aria-describedby="emailHelp" placeholder="Ciudad">
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input">
+                    He leído y acepto la <a href="" title=""> política de privacidad</a>
+                  </label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-submit">ENVIAR</button>
+
+              </fieldset>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- End of Block Form -->
+
+    <!-- Block Offices -->
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="block-office pull-right">
+            <h3 class="h3">BARCELONA</h3>
+            <p>Vía Augusta 252-260 <br />
+              5º Planta <br />
+              08017 Barcelona
+            </p>
+            <div class="phone">
+              <a href="telf:934949670" title=""><svg  viewBox="0 0 23 23" width="20"  class="icon" role="presentation"><use xlink:href="svg/symbol/svg/sprite.symbol.svg#phone"></use></svg> 934 949 670</a></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="block-office">
+            <h3 class="h3">MADRID</h3>
+            <p>Calle Veláquez, 51<br />
+              Primero  Izquierda <br />
+              28001 Madrid
+            </p>
+            <div class="phone">
+              <a href="telf:915750462" title=""><svg  viewBox="0 0 23 23" width="20"  class="icon" role="presentation"><use xlink:href="svg/symbol/svg/sprite.symbol.svg#phone"></use></svg> 91 575 04 62</a></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End of Block Offices -->
+
+    @@include("blocks/footer.html")
+	</main>
+
+  
+  @@include("core/plugins.js.html")
+
+@@include("core/html-end.html")
