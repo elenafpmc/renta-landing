@@ -153,6 +153,11 @@ header {
 .pull-right {
 	float: right;
 }
+.text-left-xs {
+	@include media-breakpoint-down(xs) {
+		text-align: left!important;
+	}
+}
 
 // Contenido landing
 
