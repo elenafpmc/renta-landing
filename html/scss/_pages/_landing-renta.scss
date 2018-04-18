@@ -53,6 +53,14 @@ header {
 	.logo-orange {
 		display: none;
 	}
+	.img--not-fixed,
+	.img--fixed {
+		display: inline-block;
+		width: 30px;
+	}
+	.img--fixed {
+		display: none
+	}
 	&.fixed-header {
 		background-color: #fff;
 		transition: .2s;
@@ -65,12 +73,16 @@ header {
 			display: none;
 		}
 
+		.img--fixed {
+			display: inline-block;
+		}
+		.img--not-fixed {
+			display: none
+		}
+
+
 		.link {
 			color: #ff8000;
-
-			svg {
-				fill: #ff8000;
-			}
 		}
 	}
 }
@@ -138,11 +150,9 @@ header {
 			margin-right: 0;
 		}
 
-		svg {
+		img {
 			display: inline-block;
 			position: relative;
-			top: 5px;
-			fill: #fff;
 			height: 22px;
 			width: 22px;
 		}
@@ -306,14 +316,9 @@ legend {
 				text-decoration: none;
 			}
 
-			svg {
-				display: block;
-				position: absolute;
-				top: 5px;
-				left: 0;
-				fill: #fff;
+			img {
+				display: inline-block;
 				width: 28px;
-				height: 28px;
 			}
 		}
 	}
